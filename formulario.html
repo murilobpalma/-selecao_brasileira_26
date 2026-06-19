@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apostas - Brasil 2026</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CBF_logo.svg/80px-CBF_logo.svg.png" alt="CBF" height="40"/>
+        <span class="fw-bold">Brasil 2026</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="selecao.html"><i class="bi bi-shield-fill"></i> A Seleção</a></li>
+          <li class="nav-item"><a class="nav-link" href="pais.html"><i class="bi bi-globe-americas"></i> O País</a></li>
+          <li class="nav-item"><a class="nav-link" href="elenco.html"><i class="bi bi-people-fill"></i> Elenco</a></li>
+          <li class="nav-item"><a class="nav-link" href="copa2026.html"><i class="bi bi-trophy-fill"></i> Copa 2026</a></li>
+          <li class="nav-item"><a class="nav-link active" href="formulario.html"><i class="bi bi-chat-dots-fill"></i> Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold"><i class="bi bi-chat-dots-fill me-2"></i>Entre em Contato</h1>
+      <p class="lead">Envie sua mensagem ou tire suas dúvidas</p>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- MENSAGEM DE SUCESSO (oculta por padrão) -->
+        <div id="msgSucesso" class="alert alert-success d-none mb-4 rounded-4" role="alert">
+          <h5 class="fw-bold"><i class="bi bi-check-circle-fill me-2"></i>Mensagem enviada com sucesso!</h5>
+          <p class="mb-0">Obrigado pelo contato. Retornaremos em breve!</p>
+        </div>
+
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+          <div class="card-header py-3 text-white fw-bold fs-5" style="background:#009739;">
+            <i class="bi bi-envelope-fill me-2"></i>Formulário de Contato
+          </div>
+          <div class="card-body p-4">
+            <form id="formBolao" novalidate>
+
+              <!-- DADOS PESSOAIS -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Nome completo *</label>
+                  <input type="text" class="form-control rounded-3" id="nome" placeholder="Seu nome" required/>
+                  <div class="invalid-feedback">Por favor, informe seu nome.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">E-mail *</label>
+                  <input type="email" class="form-control rounded-3" id="email" placeholder="seu@email.com" required/>
+                  <div class="invalid-feedback">Informe um e-mail válido.</div>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">Assunto *</label>
+                  <select class="form-select rounded-3" id="assunto" required>
+                    <option value="" selected disabled>Selecione o assunto...</option>
+                    <option>Dúvidas sobre a Seleção</option>
+                    <option>Informações sobre a Copa 2026</option>
+                    <option>Sugestões para o site</option>
+                    <option>Outro assunto</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione um assunto.</div>
+                </div>
+              </div>
+
+              <!-- MENSAGEM -->
+              <div class="mb-4">
+                <label class="form-label fw-semibold"><i class="bi bi-chat-quote-fill text-success me-1"></i> Mensagem *</label>
+                <textarea class="form-control rounded-3" id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                <div class="invalid-feedback">Por favor, escreva uma mensagem.</div>
+              </div>
+
+              <!-- TERMOS -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="termos" required/>
+                <label class="form-check-label" for="termos">
+                  Concordo com o uso dos meus dados para resposta ao contato.
+                </label>
+                <div class="invalid-feedback">Você precisa aceitar os termos.</div>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg w-100 rounded-3 fw-bold">
+                <i class="bi bi-send-fill me-2"></i>Enviar Mensagem
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-bg text-white py-4">
+    <div class="container text-center">
+      <p class="mb-1 fw-bold">© 2026 Brasil na Copa do Mundo</p>
+      <p class="mb-0 text-white-50 small">Site educacional desenvolvido com Bootstrap 5 · HTML · CSS · JS</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

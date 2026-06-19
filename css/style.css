@@ -1,0 +1,623 @@
+/* =============================================
+   BRASIL 2026 — MINIMALISTA & MODERNO
+   ============================================= */
+
+:root {
+  --verde: #009739;
+  --verde-escuro: #007a2e;
+  --amarelo: #FEDD00;
+  --amarelo-claro: #FFF8CC;
+  --azul: #002776;
+  --azul-escuro: #001a52;
+  --cinza-claro: #F5F7FA;
+  --cinza-medio: #E8ECF0;
+  --cinza-texto: #4A5568;
+  --preto: #1A202C;
+}
+
+/* RESET E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  color: var(--preto);
+  background: var(--cinza-claro);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================
+   NAVBAR — Minimalista
+   ============================================= */
+#mainNav {
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
+}
+
+#mainNav .navbar-brand {
+  font-weight: 700;
+  color: var(--verde);
+}
+
+#mainNav .navbar-brand span {
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  color: var(--preto);
+}
+
+#mainNav .nav-link {
+  color: var(--cinza-texto) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+#mainNav .nav-link i {
+  font-size: 0.85rem;
+  margin-right: 4px;
+  opacity: 0.7;
+}
+
+#mainNav .nav-link:hover {
+  color: var(--verde) !important;
+  background: var(--amarelo-claro);
+}
+
+#mainNav .nav-link.active {
+  color: var(--verde) !important;
+  background: var(--amarelo-claro);
+  font-weight: 600;
+}
+
+#mainNav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--verde);
+  border-radius: 2px;
+}
+
+/* =============================================
+   HERO — Minimalista & Moderno
+   ============================================= */
+.hero {
+  min-height: 85vh;
+  background: linear-gradient(165deg, #ffffff 0%, var(--amarelo-claro) 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--amarelo) 0%, transparent 70%);
+  opacity: 0.15;
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--verde) 0%, transparent 70%);
+  opacity: 0.12;
+  border-radius: 50%;
+}
+
+.hero-overlay {
+  display: none;
+}
+
+.hero h1 {
+  color: var(--preto);
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  color: var(--cinza-texto);
+  font-weight: 500;
+}
+
+.hero-escudo {
+  width: 140px;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08));
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
+
+.text-shadow {
+  text-shadow: none;
+}
+
+.btn-warning {
+  background: var(--amarelo);
+  border: 2px solid var(--amarelo);
+  color: var(--preto);
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(254, 221, 0, 0.3);
+}
+
+.btn-warning:hover {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 151, 57, 0.3);
+}
+
+/* =============================================
+   PAGE HEADER — Minimalista
+   ============================================= */
+.page-header {
+  background: linear-gradient(165deg, #ffffff 0%, var(--amarelo-claro) 100%);
+  border-bottom: 1px solid var(--cinza-medio);
+  padding: 3rem 0 !important;
+}
+
+.page-header h1 {
+  color: var(--preto);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.page-header p {
+  color: var(--cinza-texto);
+  font-weight: 500;
+}
+
+.page-header i {
+  color: var(--verde);
+}
+
+/* =============================================
+   SECTION TITLE — Minimalista
+   ============================================= */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--preto);
+  position: relative;
+  padding-bottom: 1rem;
+  letter-spacing: -0.8px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--amarelo);
+  border-radius: 3px;
+}
+
+/* =============================================
+   CARDS — Minimalista & Moderno
+   ============================================= */
+.card-stat {
+  background: #ffffff;
+  border: 3px solid var(--verde);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08) !important;
+  border-left-color: var(--amarelo);
+}
+
+.jogo-card {
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio);
+  border-top: 3px solid var(--amarelo);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jogo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-top-color: var(--verde);
+}
+
+.info-box {
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio);
+  border-left: 3px solid var(--verde);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.info-box:hover {
+  border-left-color: var(--amarelo);
+}
+
+.uniform-card {
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uniform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.curiosidade-card {
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio);
+  border-bottom: 3px solid var(--verde);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.curiosidade-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-bottom-color: var(--amarelo);
+}
+
+/* =============================================
+   ACCORDION — Minimalista
+   ============================================= */
+.accordion-item {
+  border: 1px solid var(--cinza-medio) !important;
+  background: #ffffff;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: var(--preto);
+  background: #ffffff;
+  border-radius: 12px !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--amarelo-claro);
+  color: var(--verde);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(0,151,57,0.15);
+  border-color: var(--verde);
+}
+
+.accordion-button::after {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(93%) saturate(1088%) hue-rotate(131deg);
+}
+
+/* =============================================
+   JOGADORES — CARDS Minimalista
+   ============================================= */
+.numero-camisa {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--verde);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0,151,57,0.25);
+}
+
+.numero-camisa.destaque {
+  background: var(--amarelo);
+  color: var(--verde-escuro);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio) !important;
+  border-radius: 16px !important;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1) !important;
+}
+
+.goleiro-bg  { background: linear-gradient(135deg, #E6F7ED 0%, #C1E8D1 100%); }
+.defensor-bg { background: linear-gradient(135deg, #E6EDFF 0%, #C1D4FF 100%); }
+.meia-bg     { background: linear-gradient(135deg, #FFF8E1 0%, #FFE999 100%); }
+.atacante-bg { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); }
+
+.card-foto-placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.badge.bg-success { background: var(--verde) !important; }
+.badge.bg-primary { background: var(--azul) !important; }
+.badge.bg-warning { background: var(--amarelo) !important; color: var(--preto) !important; }
+.badge.bg-danger  { background: #E53E3E !important; }
+
+/* =============================================
+   LENDAS — Minimalista
+   ============================================= */
+.lenda-card {
+  background: #ffffff;
+  border: 1px solid var(--cinza-medio);
+  border-left: 4px solid var(--amarelo);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lenda-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-left-color: var(--verde);
+}
+
+.lenda-foto-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* =============================================
+   TÉCNICO — TIMELINE Minimalista
+   ============================================= */
+.timeline-item {
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--cinza-medio);
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--verde);
+  border-radius: 50%;
+}
+
+.tecnico-foto-circle {
+  border: 4px solid var(--amarelo);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+/* =============================================
+   FORMULÁRIO — Minimalista
+   ============================================= */
+.form-control,
+.form-select {
+  border: 1px solid var(--cinza-medio);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(0,151,57,0.1);
+  outline: none;
+}
+
+.form-label {
+  color: var(--cinza-texto);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =============================================
+   FOOTER — Minimalista
+   ============================================= */
+.footer-bg {
+  background: var(--preto);
+  border-top: 3px solid var(--amarelo);
+}
+
+.footer-bg p {
+  color: rgba(255,255,255,0.9);
+}
+
+.footer-bg .text-white-50 {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* =============================================
+   BOTÕES — Minimalista
+   ============================================= */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+}
+
+.btn-success {
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  color: white;
+}
+
+.btn-success:hover {
+  background: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,151,57,0.25);
+}
+
+.btn-outline-success {
+  color: var(--verde);
+  border: 2px solid var(--verde);
+  background: transparent;
+}
+
+.btn-outline-success:hover {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-success.active {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: white;
+}
+
+/* =============================================
+   TABELAS — Minimalista
+   ============================================= */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: var(--verde);
+  color: white;
+}
+
+.table-success {
+  background: var(--amarelo-claro) !important;
+}
+
+.table-bordered {
+  border: 1px solid var(--cinza-medio);
+}
+
+.table-hover tbody tr:hover {
+  background: var(--amarelo-claro);
+}
+
+/* =============================================
+   UTILITÁRIOS
+   ============================================= */
+.bg-light {
+  background: #ffffff !important;
+}
+
+.text-success {
+  color: var(--verde) !important;
+}
+
+.text-warning {
+  color: #D97706 !important;
+}
+
+.text-muted {
+  color: var(--cinza-texto) !important;
+}
+
+.rounded-4 {
+  border-radius: 16px !important;
+}
+
+.shadow,
+.shadow-sm {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+@media (max-width: 768px) {
+  .hero h1 { 
+    font-size: 2.2rem; 
+    letter-spacing: -1px;
+  }
+  .hero p { font-size: 1rem; }
+  .hero-escudo { width: 100px; }
+  .section-title { font-size: 1.5rem; }
+  
+  #mainNav .nav-link {
+    border-radius: 0;
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    min-height: 70vh;
+  }
+  
+  .hero h1 { 
+    font-size: 1.8rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .card-stat,
+  .jogo-card,
+  .curiosidade-card {
+    margin-bottom: 1rem;
+  }
+}
