@@ -13,7 +13,7 @@
   <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CBF_logo.svg/80px-CBF_logo.svg.png" alt="CBF" height="40"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Confedera%C3%A7%C3%A3o_Brasileira_de_Futebol_logo_%282020%29.svg/1280px-Confedera%C3%A7%C3%A3o_Brasileira_de_Futebol_logo_%282020%29.svg.png" alt="CBF" height="40"/>
         <span class="fw-bold">Brasil 2026</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -35,156 +35,210 @@
   <div class="page-header text-center py-5">
     <div class="container">
       <h1 class="display-4 fw-bold"><i class="bi bi-shield-fill me-2"></i>A Seleção Brasileira</h1>
-      <p class="lead">Conheça tudo sobre o Scratch, a Canarinha!</p>
+    
     </div>
   </div>
 
   <div class="container py-5">
+    <div class="row g-4 align-items-start">
 
-    <!-- ESCUDO E NOME -->
-    <div class="row g-4 align-items-center mb-5">
-      <div class="col-md-4 text-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CBF_logo.svg/300px-CBF_logo.svg.png"
+      <!-- ============================
+           COLUNA ESQUERDA (fixa/sticky)
+           ============================ -->
+      <div class="col-md-4 text-center d-flex flex-column align-items-center gap-3" style="position:sticky;top:80px;">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Confedera%C3%A7%C3%A3o_Brasileira_de_Futebol_logo_%282020%29.svg/1280px-Confedera%C3%A7%C3%A3o_Brasileira_de_Futebol_logo_%282020%29.svg.png"
              alt="Escudo CBF" class="img-fluid" style="max-width:200px"/>
-        <h3 class="fw-bold mt-3 text-success">Seleção Brasileira</h3>
-        <p class="text-muted">CBF — Confederação Brasileira de Futebol</p>
+        <div>
+          <h3 class="fw-bold text-success mb-1">Seleção Brasileira</h3>
+          <p class="text-muted mb-0" style="font-weight: bold;">CBF — Confederação Brasileira de Futebol</p>
+        </div>
+
+        <!-- PLAYER HINO -->
+        <div class="hino-player w-100">
+          <div class="d-flex align-items-center gap-3">
+            <span class="hino-flag">
+              <img src="img/bandeira_simples.png" alt="Bandeira Brasil" style="width:42px;height:28px;object-fit:cover;border-radius:4px;">
+            </span>
+            <div class="flex-grow-1">
+              <div class="hino-title">Hino Nacional Brasileiro</div>
+              <div class="hino-subtitle">Francisco Manuel da Silva · 1831</div>
+            </div>
+            <button class="hino-btn" id="hinoPlayBtn" onclick="toggleHino()">
+              <i class="bi bi-play-fill" id="hinoIcon"></i>
+            </button>
+          </div>
+          <div class="hino-bar mt-3">
+            <span class="hino-time" id="hinoCurrent">0:00</span>
+            <div class="hino-progress" id="hinoProgress" onclick="seekHino(event)">
+              <div class="hino-fill" id="hinoFill"></div>
+            </div>
+            <span class="hino-time" id="hinoDuration">--:--</span>
+          </div>
+          <audio id="hinoAudio" preload="metadata">
+            <source src="audio/hino.mp3" type="audio/mpeg"/>
+          </audio>
+        </div>
+
+        <!-- LETRA COMPLETA DO HINO -->
+        <div class="hino-legenda w-100 text-start">
+          <p class="hino-legenda-titulo"><i class="bi bi-music-note-beamed me-1"></i> Letra do Hino Nacional</p>
+          <p>Ouviram do Ipiranga às margens plácidas<br>
+          De um povo heroico o brado retumbante,<br>
+          E o sol da Liberdade, em raios fúlgidos,<br>
+          Brilhou no céu da Pátria nesse instante.</p>
+          <p>Se o penhor dessa igualdade<br>
+          Conseguimos conquistar com braço forte,<br>
+          Em teu seio, ó Liberdade,<br>
+          Desafia o nosso peito a própria morte!</p>
+          <p><strong>Ó Pátria amada, Idolatrada, Salve! Salve!<br>
+          Brasil, um sonho intenso, um raio vívido<br>
+          De amor e de esperança à terra desce,<br>
+          Se em teu formoso céu, risonho e límpido,<br>
+          A imagem do Cruzeiro resplandece.</strong></p>
+          <p>Gigante pela própria natureza,<br>
+          És belo, és forte, impávido colosso,<br>
+          E o teu futuro espelha essa grandeza.</p>
+          <p>Terra adorada,<br>
+          Entre outras mil,<br>
+          És tu, Brasil,<br>
+          Ó Pátria amada!</p>
+          <p>Dos filhos deste solo és mãe gentil,<br>
+          Pátria amada, Brasil!</p>
+          <p>Deitado eternamente em berço esplêndido,<br>
+          Ao som do mar e à luz do céu profundo,<br>
+          Fulguras, ó Brasil, florão da América,<br>
+          Iluminado ao sol do Novo Mundo!</p>
+          <p>Do que a terra mais garrida<br>
+          Teus risonhos, lindos campos têm mais flores;<br>
+          "Nossos bosques têm mais vida",<br>
+          "Nossa vida" no teu seio "mais amores."</p>
+          <p><strong>Ó Pátria amada, Idolatrada, Salve! Salve!<br>
+          Brasil, de amor eterno seja símbolo<br>
+          O lábaro que ostentas estrelado,<br>
+          E diga o verde-louro dessa flâmula<br>
+          — "Paz no futuro e glória no passado."</strong></p>
+          <p class="mb-0">Mas, se ergues da justiça a clava forte,<br>
+          Verás que um filho teu não foge à luta,<br>
+          Nem teme, quem te adora, a própria morte.<br>
+          Terra adorada,<br>
+          Entre outras mil,<br>
+          És tu, Brasil,<br>
+          Ó Pátria amada!<br>
+          Dos filhos deste solo és mãe gentil,<br>
+          <strong>Pátria amada, Brasil!</strong></p>
+        </div>
+
       </div>
+
+      <!-- ============================
+           COLUNA DIREITA (todo o resto)
+           ============================ -->
       <div class="col-md-8">
-        <h2 class="fw-bold mb-3">Nome da Seleção</h2>
-        <p class="mb-4">Seleção Brasileira de Futebol, conhecida como <strong>Canarinha</strong>, <strong>Verde-Amarela</strong> ou <strong>Scratch</strong>.</p>
-        
-        <h2 class="fw-bold mb-3">Cores da Seleção</h2>
-        <div class="d-flex gap-2 mb-4 flex-wrap">
-          <div class="p-3 rounded-3" style="background:#009739; color:#fff; min-width:100px; text-align:center;">
-            <strong>Verde</strong>
+
+        <!-- UNIFORMES -->
+        <h2 class="section-title text-center mb-4">Uniformes Oficiais</h2>
+        <div class="row g-3 mb-5">
+          <div class="col-6">
+            <div class="uniform-card p-3 rounded-4 shadow text-center">
+              <img src="img/uniforme1.jpg" alt="Uniforme Brasil Titular" class="img-fluid mb-2" style="max-height:220px;object-fit:contain;"/>
+              <h6 class="fw-bold mb-1">Camisa Titular</h6>
+            </div>
           </div>
-          <div class="p-3 rounded-3" style="background:#FEDD00; color:#000; min-width:100px; text-align:center;">
-            <strong>Amarelo</strong>
-          </div>
-          <div class="p-3 rounded-3" style="background:#002776; color:#fff; min-width:100px; text-align:center;">
-            <strong>Azul</strong>
-          </div>
-          <div class="p-3 rounded-3" style="background:#fff; color:#000; min-width:100px; text-align:center; border:1px solid #ddd;">
-            <strong>Branco</strong>
+          <div class="col-6">
+            <div class="uniform-card p-3 rounded-4 shadow text-center">
+              <img src="img/uniforme2.jpg" alt="Uniforme Brasil Reserva" class="img-fluid mb-2" style="max-height:220px;object-fit:contain;"/>
+              <h6 class="fw-bold mb-1">Camisa Reserva</h6>
+            </div>
           </div>
         </div>
 
-        <h2 class="fw-bold mb-3">Ano de Criação</h2>
-        <p class="mb-0"><strong>1914</strong> — A Seleção Brasileira foi fundada há mais de 110 anos.</p>
+        <!-- MASCOTE -->
+        <div class="d-flex align-items-center gap-4 p-4 rounded-4 bg-white shadow-sm mb-5">
+          <img src="img/mascote.png" alt="Canarinho - Mascote da Seleção" style="width:100px;height:100px;object-fit:contain;flex-shrink:0;">
+          <div>
+            <h5 class="fw-bold mb-1">Mascote: Canarinho</h5>
+            <p class="mb-0 text-muted">O <strong>Canarinho</strong> é o mascote símbolo da Seleção Brasileira, um canário com as cores verde e amarela que representa a alegria e paixão do povo brasileiro pelo futebol.</p>
+          </div>
+        </div>
+
+        <!-- HISTÓRIA -->
+        <h2 class="section-title text-center mb-4">História da Seleção</h2>
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+              <h5 class="fw-bold text-success mb-3">🌱 Fundação (1914)</h5>
+              <p class="mb-0">A Seleção Brasileira foi fundada em 1914 e disputou seu primeiro jogo oficial contra a Exeter City FC da Inglaterra.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+              <h5 class="fw-bold text-success mb-3">⭐ Era Pelé (1958–1970)</h5>
+              <p class="mb-0">Com Pelé, o Brasil conquistou 3 títulos mundiais: 1958 (Suécia), 1962 (Chile) e 1970 (México). A seleção de 1970 é considerada a melhor de todos os tempos.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+              <h5 class="fw-bold text-success mb-3">🏆 Tetra e Penta</h5>
+              <p class="mb-0">O Brasil conquistou o Tetracampeonato em 1994 (EUA) com Romário e o Pentacampeonato em 2002 (Japão/Coreia) com Ronaldo Fenômeno.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+              <h5 class="fw-bold text-success mb-3">🎯 Busca pelo Hexa</h5>
+              <p class="mb-0">Desde 2002, o Brasil busca o sexto título. A Copa de 2026 representa uma nova oportunidade de conquistar o tão sonhado Hexacampeonato.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TÍTULOS E PARTICIPAÇÕES -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="card-stat p-4 rounded-4 shadow-sm text-center h-100">
+              <div class="fs-1 text-warning mb-2"><i class="bi bi-trophy-fill"></i></div>
+              <h2 class="display-4 fw-bold text-success mb-2">5</h2>
+              <h5 class="fw-bold mb-2">Títulos Conquistados</h5>
+              <p class="text-muted mb-0">1958, 1962, 1970, 1994, 2002</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-stat p-4 rounded-4 shadow-sm text-center h-100">
+              <div class="fs-1 text-warning mb-2"><i class="bi bi-calendar-event"></i></div>
+              <h2 class="display-4 fw-bold text-success mb-2">22</h2>
+              <h5 class="fw-bold mb-2">Participações em Copas</h5>
+              <p class="text-muted mb-0">Única seleção presente em todas as edições</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CURIOSIDADES -->
+        <h2 class="section-title text-center mb-4">Curiosidades Importantes</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
+              <div class="fs-2 mb-2">🌍</div>
+              <h5 class="fw-bold">Única nação invicta</h5>
+              <p class="text-muted mb-0">O Brasil é o único país que participou de todas as edições da Copa do Mundo.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
+              <div class="fs-2 mb-2">👑</div>
+              <h5 class="fw-bold">Maior campeão</h5>
+              <p class="text-muted mb-0">Com 5 títulos, o Brasil é o maior vencedor da Copa do Mundo.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
+              <div class="fs-2 mb-2">🎨</div>
+              <h5 class="fw-bold">A camisa amarela</h5>
+              <p class="text-muted mb-0">Adotada em 1954 após concurso popular, substituindo o branco usado em 1950.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- UNIFORMES -->
-    <h2 class="section-title text-center mb-4">Uniformes Oficiais</h2>
-    <div class="row g-4 mb-5">
-      <div class="col-md-6">
-        <div class="uniform-card p-4 rounded-4 shadow text-center">
-          <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c48e471a-fce1-4b6e-be7e-c2b5c3c27e09/BRAZ+M+NK+DF+STAD+JSY+SS+HM.png" 
-               alt="Uniforme Brasil Titular" 
-               class="img-fluid mb-3" 
-               style="max-height:280px; object-fit:contain;"/>
-          <h5 class="fw-bold">Camisa Titular</h5>
-          <p class="text-muted mb-0">Amarela com detalhes verdes — Nike 2026</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="uniform-card p-4 rounded-4 shadow text-center">
-          <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/57ac96de-d9c5-44d4-99b0-16c5aa2bf05c/BRAZ+M+NK+DF+STAD+JSY+SS+AW.png" 
-               alt="Uniforme Brasil Reserva" 
-               class="img-fluid mb-3" 
-               style="max-height:280px; object-fit:contain;"/>
-          <h5 class="fw-bold">Camisa Reserva</h5>
-          <p class="text-muted mb-0">Azul com detalhes dourados — Nike 2026</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MASCOTE -->
-    <div class="row g-4 align-items-center mb-5 p-4 rounded-4 bg-white shadow-sm">
-      <div class="col-md-3 text-center">
-        <div style="font-size:6rem;">🦜</div>
-      </div>
-      <div class="col-md-9">
-        <h2 class="fw-bold mb-2">Mascote: Canarinho</h2>
-        <p class="mb-0">O <strong>Canarinho</strong> é o mascote símbolo da Seleção Brasileira, um canário com as cores verde e amarela que representa a alegria e paixão do povo brasileiro pelo futebol.</p>
-      </div>
-    </div>
-
-    <!-- HISTÓRIA -->
-    <h2 class="section-title text-center mb-4">História da Seleção</h2>
-    <div class="row g-4 mb-5">
-      <div class="col-md-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-          <h5 class="fw-bold text-success mb-3">🌱 Fundação (1914)</h5>
-          <p class="mb-0">A Seleção Brasileira foi fundada em 1914 e disputou seu primeiro jogo oficial contra a Exeter City FC da Inglaterra.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-          <h5 class="fw-bold text-success mb-3">⭐ Era Pelé (1958-1970)</h5>
-          <p class="mb-0">Com Pelé, o Brasil conquistou 3 títulos mundiais: 1958 (Suécia), 1962 (Chile) e 1970 (México). A seleção de 1970 é considerada a melhor de todos os tempos.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-          <h5 class="fw-bold text-success mb-3">🏆 Tetra e Penta</h5>
-          <p class="mb-0">O Brasil conquistou o Tetracampeonato em 1994 (EUA) com Romário e o Pentacampeonato em 2002 (Japão/Coreia) com Ronaldo Fenômeno.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-          <h5 class="fw-bold text-success mb-3">🎯 Busca pelo Hexa</h5>
-          <p class="mb-0">Desde 2002, o Brasil busca o sexto título mundial. A Copa de 2026 representa uma nova oportunidade de conquistar o tão sonhado Hexacampeonato.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- TÍTULOS E PARTICIPAÇÕES -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-6">
-        <div class="card-stat p-4 rounded-4 shadow-sm text-center h-100">
-          <div class="fs-1 text-warning mb-2"><i class="bi bi-trophy-fill"></i></div>
-          <h2 class="display-4 fw-bold text-success mb-2">5</h2>
-          <h5 class="fw-bold mb-2">Títulos Conquistados</h5>
-          <p class="text-muted mb-0">1958, 1962, 1970, 1994, 2002</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card-stat p-4 rounded-4 shadow-sm text-center h-100">
-          <div class="fs-1 text-warning mb-2"><i class="bi bi-calendar-event"></i></div>
-          <h2 class="display-4 fw-bold text-success mb-2">22</h2>
-          <h5 class="fw-bold mb-2">Participações em Copas</h5>
-          <p class="text-muted mb-0">Única seleção presente em todas as edições</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CURIOSIDADES -->
-    <h2 class="section-title text-center mb-4">Curiosidades Importantes</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
-          <div class="fs-2 mb-2">🌍</div>
-          <h5 class="fw-bold">Única nação invicta</h5>
-          <p class="text-muted mb-0">O Brasil é o único país que participou de todas as edições da Copa do Mundo.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
-          <div class="fs-2 mb-2">👑</div>
-          <h5 class="fw-bold">Maior campeão</h5>
-          <p class="text-muted mb-0">Com 5 títulos, o Brasil é o maior vencedor da Copa do Mundo.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="curiosidade-card p-4 rounded-4 shadow-sm h-100">
-          <div class="fs-2 mb-2">🎨</div>
-          <h5 class="fw-bold">A camisa amarela</h5>
-          <p class="text-muted mb-0">Adotada em 1954 após concurso popular, substituindo o branco usado em 1950.</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <footer class="footer-bg text-white py-4">
@@ -196,5 +250,41 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    const audio   = document.getElementById('hinoAudio');
+    const icon    = document.getElementById('hinoIcon');
+    const fill    = document.getElementById('hinoFill');
+    const current = document.getElementById('hinoCurrent');
+    const durEl   = document.getElementById('hinoDuration');
+
+    function fmt(s) {
+      if (!s || isNaN(s)) return '--:--';
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    audio.addEventListener('loadedmetadata', () => { durEl.textContent = fmt(audio.duration); });
+    audio.addEventListener('timeupdate', () => {
+      current.textContent = fmt(audio.currentTime);
+      if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    });
+    audio.addEventListener('ended', () => {
+      icon.className = 'bi bi-play-fill';
+      fill.style.width = '0%';
+      current.textContent = '0:00';
+    });
+
+    function toggleHino() {
+      if (audio.paused) { audio.play(); icon.className = 'bi bi-pause-fill'; }
+      else              { audio.pause(); icon.className = 'bi bi-play-fill'; }
+    }
+
+    function seekHino(e) {
+      const bar = document.getElementById('hinoProgress');
+      const rect = bar.getBoundingClientRect();
+      audio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * audio.duration;
+    }
+  </script>
 </body>
 </html>

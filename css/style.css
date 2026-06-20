@@ -9,8 +9,8 @@
   --amarelo-claro: #FFF8CC;
   --azul: #002776;
   --azul-escuro: #001a52;
-  --cinza-claro: #F5F7FA;
-  --cinza-medio: #E8ECF0;
+  --cinza-claro: #dce8f5;
+  --cinza-medio: #c0d4e8;
   --cinza-texto: #4A5568;
   --preto: #1A202C;
 }
@@ -237,10 +237,14 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-stat:hover {
+.card-stat:hover,
+a:hover > .card-stat {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.08) !important;
-  border-left-color: var(--amarelo);
+  border-top: 3px solid var(--amarelo) !important;
+  border-right: 3px solid var(--amarelo) !important;
+  border-bottom: 3px solid var(--amarelo) !important;
+  border-left: 3px solid var(--amarelo) !important;
 }
 
 .jogo-card {
@@ -577,11 +581,11 @@ body {
 
 .shadow,
 .shadow-sm {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13) !important;
 }
 
 .shadow-lg {
-  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16) !important;
 }
 
 /* =============================================
@@ -620,4 +624,108 @@ body {
   .curiosidade-card {
     margin-bottom: 1rem;
   }
+}
+
+/* =============================================
+   PLAYER HINO NACIONAL
+   ============================================= */
+.hino-player {
+  background: #ffffff;
+  border: 2px solid var(--amarelo);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  max-width: 480px;
+  box-shadow: 0 4px 16px rgba(254, 221, 0, 0.2);
+}
+
+.hino-flag {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.hino-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--preto);
+}
+
+.hino-subtitle {
+  font-size: 0.78rem;
+  color: var(--cinza-texto);
+}
+
+.hino-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,151,57,0.3);
+}
+
+.hino-btn:hover {
+  background: var(--verde-escuro);
+  transform: scale(1.08);
+}
+
+.hino-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hino-time {
+  font-size: 0.75rem;
+  color: var(--cinza-texto);
+  min-width: 30px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hino-progress {
+  flex-grow: 1;
+  height: 5px;
+  background: var(--cinza-medio);
+  border-radius: 99px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hino-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--amarelo);
+  border-radius: 99px;
+  transition: width 0.3s linear;
+}
+
+/* =============================================
+   LEGENDA DO HINO
+   ============================================= */
+.hino-legenda {
+  background: var(--amarelo-claro);
+  border-left: 3px solid var(--amarelo);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  font-size: 0.82rem;
+  color: var(--cinza-texto);
+  line-height: 1.7;
+}
+
+.hino-legenda-titulo {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--preto);
+  margin-bottom: 0.6rem;
+}
+
+.hino-legenda p {
+  margin-bottom: 0.6rem;
 }
