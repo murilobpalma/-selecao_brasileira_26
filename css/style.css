@@ -31,9 +31,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =============================================
-   NAVBAR — Minimalista
-   ============================================= */
+/* NAVBAR */
 #mainNav {
   background: #ffffff;
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);
@@ -90,9 +88,7 @@ body {
   border-radius: 2px;
 }
 
-/* =============================================
-   HERO — Minimalista & Moderno
-   ============================================= */
+/* HERO */
 .hero {
   min-height: 85vh;
   background: linear-gradient(165deg, #ffffff 0%, var(--amarelo-claro) 100%);
@@ -158,8 +154,8 @@ body {
 }
 
 .btn-warning {
-  background: var(--amarelo);
-  border: 2px solid var(--amarelo);
+  background: var(--verde);
+  border: 2px solid var(--verde);
   color: var(--preto);
   font-weight: 700;
   padding: 0.85rem 2.5rem;
@@ -172,9 +168,9 @@ body {
 }
 
 .btn-warning:hover {
-  background: var(--verde);
-  border-color: var(--verde);
-  color: white;
+  background: var(--amarelo);
+  border-color: var(--amarelo);
+  color: var(--preto);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 151, 57, 0.3);
 }
@@ -631,11 +627,16 @@ a:hover > .card-stat {
    ============================================= */
 .hino-player {
   background: #ffffff;
-  border: 2px solid var(--amarelo);
+  border: 2px solid var(--verde);
   border-radius: 16px;
   padding: 1rem 1.25rem;
   max-width: 480px;
-  box-shadow: 0 4px 16px rgba(254, 221, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0,151,57,0.15);
+  transition: border-color 0.2s;
+}
+
+.hino-player:hover {
+  border-color: var(--amarelo);
 }
 
 .hino-flag {
@@ -711,12 +712,17 @@ a:hover > .card-stat {
    ============================================= */
 .hino-legenda {
   background: var(--amarelo-claro);
-  border-left: 3px solid var(--amarelo);
+  border: 2px solid var(--verde);
   border-radius: 12px;
   padding: 1rem 1.25rem;
   font-size: 0.82rem;
   color: var(--cinza-texto);
   line-height: 1.7;
+  transition: border-color 0.2s;
+}
+
+.hino-legenda:hover {
+  border-color: var(--amarelo);
 }
 
 .hino-legenda-titulo {
