@@ -1,12 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="img/cbf_logo.png"/>
   <title>Elenco - Brasil 2026</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .jogador-card { border:2px solid var(--cinza-medio) !important; border-radius:16px !important; transition:all 0.3s; overflow:hidden; }
+    .jogador-card:hover { border-color:var(--amarelo) !important; transform:translateY(-6px); box-shadow:0 16px 32px rgba(0,0,0,0.12) !important; }
+    .jogador-card .foto-wrap { height:190px; overflow:hidden; position:relative; background:#f0f0f0; }
+    .jogador-card .foto-wrap img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 0.4s; }
+    .jogador-card:hover .foto-wrap img { transform:scale(1.06); }
+    .num-badge { position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.65); color:#fff; font-weight:700; font-size:0.82rem; width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); }
+    .num-badge.star { background:var(--amarelo); color:var(--preto); }
+    .lenda-card-new { border:2px solid var(--verde); border-radius:16px; overflow:hidden; background:#fff; transition:all 0.3s; }
+    .lenda-card-new:hover { border-color:var(--amarelo); transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.1); }
+    .lenda-card-new .foto-lenda { height:220px; overflow:hidden; }
+    .lenda-card-new .foto-lenda img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .tecnico-wrap { background:#fff; border:2px solid var(--amarelo); border-radius:20px; overflow:hidden; box-shadow:0 8px 24px rgba(254,221,0,0.15); }
+    .stat-box { background:var(--cinza-claro); border-radius:12px; padding:0.75rem; text-align:center; }
+    .pos-pill { font-size:0.7rem; font-weight:700; border-radius:20px; padding:0.25rem 0.65rem; }
+  </style>
 </head>
 <body>
 
@@ -35,119 +52,288 @@
   <div class="page-header text-center py-5">
     <div class="container">
       <h1 class="display-4 fw-bold"><i class="bi bi-people-fill me-2"></i>Elenco Brasil 2026</h1>
-      <p class="lead">Convocados, Lendas e Comissão Técnica</p>
     </div>
   </div>
 
   <div class="container py-5">
 
-    <!-- TÉCNICO -->
+    <!-- ===================== TÉCNICO ===================== -->
     <h2 class="section-title text-center mb-4">Técnico da Seleção</h2>
     <div class="row justify-content-center mb-5">
-      <div class="col-lg-8">
-        <div class="card border-0 shadow rounded-4 p-4">
-          <div class="row align-items-center">
-            <div class="col-md-4 text-center mb-3 mb-md-0">
-              <img src="img/jogadores/carlo.jpg"
-                   alt="Carlo Ancelotti"
-                   class="img-fluid rounded-4 shadow"
-                   style="max-width:180px;"/>
+      <div class="col-lg-10">
+        <div class="tecnico-wrap">
+          <div class="row g-0">
+            <div class="col-md-3 text-center" style="background:linear-gradient(160deg,#009739,#002776); position:relative; min-height:220px; overflow:hidden;">
+              <img src="img/carlo.jpg" alt="Carlo Ancelotti" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0.55;">
+              <div style="position:relative;z-index:1;" class="d-flex flex-column align-items-center justify-content-end h-100 p-3 pb-4">
+                <span class="badge bg-warning text-dark fw-bold fs-6">Técnico</span>
+              </div>
             </div>
-            <div class="col-md-8">
-              <h3 class="fw-bold mb-1">Carlo Ancelotti</h3>
-              <p class="text-success fw-semibold mb-3">Treinador Principal</p>
-              <p class="text-muted mb-2"><strong>Naturalidade:</strong> Reggiolo, Itália</p>
-              <p class="text-muted mb-2"><strong>Idade:</strong> 65 anos (10/06/1959)</p>
-              <p class="text-muted mb-2"><strong>Na Seleção:</strong> Desde Maio de 2025</p>
-              <p class="text-muted mb-2"><strong>Pela CBF:</strong> 14 jogos · 1V · 1E · 0D na Copa (20/06/2026)</p>
-              <p class="text-muted mb-3"><strong>Assistente:</strong> Davide Ancelotti (filho)</p>
-              <p class="mb-0">Recordista de títulos na UEFA Champions League (5×). Único técnico a vencer as 5 grandes ligas europeias (Inglaterra, Espanha, Itália, Alemanha e França). Assumiu a Seleção após deixar o Real Madrid em maio de 2025, com contrato renovado até 2030.</p>
+            <div class="col-md-9 p-4">
+              <h2 class="fw-bold mb-1">Carlo Ancelotti</h2>
+              <p class="text-muted mb-3">Reggiolo, Itália · 65 anos (10/06/1959)</p>
+              <div class="row g-2 mb-3">
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="fw-bold text-success fs-5">5×</div><small class="text-muted">Champions League</small></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="fw-bold text-success fs-5">5</div><small class="text-muted">Ligas Europeias</small></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="fw-bold text-success fs-5">1V 1E</div><small class="text-muted">Na Copa 2026</small></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="fw-bold text-success fs-5">2030</div><small class="text-muted">Contrato até</small></div></div>
+              </div>
+              <p class="text-muted mb-2"><strong>Na Seleção desde:</strong> Maio de 2025 · Assistente: Davide Ancelotti (filho)</p>
+              <p class="mb-0 text-muted">Iniciou carreira de treinador na Juventus (1999). Passou por Milan (2× Champions League), Chelsea, PSG, Real Madrid (3× Champions League), Bayern de Munique, Napoli e novamente Real Madrid antes de assumir o Brasil. Único técnico campeão nas 5 principais ligas europeias. Recordista absoluto de títulos na UEFA Champions League.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- JOGADORES CONVOCADOS -->
-    <h2 class="section-title text-center mb-4">Jogadores Convocados — Copa 2026</h2>
-    <div class="row g-4 mb-5">
-      <img src="img/convocados.PNG" alt="convocados2026">
+    <!-- ===================== CONVOCADOS ===================== -->
+    <h2 class="section-title text-center mb-2">Jogadores Convocados — Copa 2026</h2>
+    <p class="text-center text-muted mb-4">Convocação anunciada em 18/05/2026</p>
 
-    <!-- LENDAS -->
+    <!-- GOLEIROS -->
+    <h5 class="fw-bold mb-3 ps-1"><span class="badge bg-success me-2">GK</span>Goleiros</h5>
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">1</div><img src="img/jogadores/alisson.jpg" alt="Alisson"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Alisson Becker</h6><span class="badge bg-success pos-pill mb-1">Goleiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Liverpool</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">12</div><img src="img/jogadores/ederson.jpg" alt="Ederson"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Ederson</h6><span class="badge bg-success pos-pill mb-1">Goleiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Fenerbahçe</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">23</div><img src="img/jogadores/weverton.png" alt="Weverton"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Weverton</h6><span class="badge bg-success pos-pill mb-1">Goleiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Grêmio</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFENSORES -->
+    <h5 class="fw-bold mb-3 ps-1"><span class="badge bg-primary me-2">DEF</span>Defensores</h5>
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">4</div><img src="img/jogadores/marquinhos.jpg" alt="Marquinhos"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Marquinhos</h6><span class="badge bg-primary pos-pill mb-1">Zagueiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">PSG</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">3</div><img src="img/jogadores/Gabriel_M.jpg" alt="Gabriel Magalhães"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Gabriel Magalhães</h6><span class="badge bg-primary pos-pill mb-1">Zagueiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Arsenal</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">15</div><img src="img/jogadores/bremer.jpg" alt="Bremer"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Bremer</h6><span class="badge bg-primary pos-pill mb-1">Zagueiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Juventus</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">24</div><img src="img/jogadores/ibanez.jpg" alt="Ibañez"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Ibañez</h6><span class="badge bg-primary pos-pill mb-1">Zagueiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Al-Ahli</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">13</div><img src="img/jogadores/leo.jpeg" alt="Léo Pereira"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Léo Pereira</h6><span class="badge bg-primary pos-pill mb-1">Zagueiro</span><p class="text-muted mb-0" style="font-size:0.78rem;">Flamengo</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">6</div><img src="img/jogadores/alex.jpg" alt="Alex Sandro"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Alex Sandro</h6><span class="badge bg-primary pos-pill mb-1">Lateral Esq.</span><p class="text-muted mb-0" style="font-size:0.78rem;">Flamengo</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">16</div><img src="img/jogadores/wesley.jpg" alt="Wesley"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Wesley</h6><span class="badge bg-primary pos-pill mb-1">Lateral Dir.</span><p class="text-muted mb-0" style="font-size:0.78rem;">Roma</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">2</div><img src="img/jogadores/douglas.jpg" alt="Douglas Santos"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Douglas Santos</h6><span class="badge bg-primary pos-pill mb-1">Lateral Esq.</span><p class="text-muted mb-0" style="font-size:0.78rem;">Zenit</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEIAS -->
+    <h5 class="fw-bold mb-3 ps-1"><span class="badge bg-warning text-dark me-2">MID</span>Meio-Campistas</h5>
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">5</div><img src="img/jogadores/casemiro.jpg" alt="Casemiro"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Casemiro</h6><span class="badge bg-warning text-dark pos-pill mb-1">Volante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Man. United</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">18</div><img src="img/jogadores/bruno.jpg" alt="Bruno Guimarães"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Bruno Guimarães</h6><span class="badge bg-warning text-dark pos-pill mb-1">Volante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Newcastle</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">10</div><img src="img/jogadores/lucas.png" alt="Lucas Paquetá"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Lucas Paquetá</h6><span class="badge bg-warning text-dark pos-pill mb-1">Meia</span><p class="text-muted mb-0" style="font-size:0.78rem;">Flamengo</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">17</div><img src="img/jogadores/danilo.jpeg" alt="Danilo"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Danilo</h6><span class="badge bg-warning text-dark pos-pill mb-1">Meia/Lateral</span><p class="text-muted mb-0" style="font-size:0.78rem;">Botafogo</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">14</div><img src="img/jogadores/fabinho.jpeg" alt="Fabinho"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Fabinho</h6><span class="badge bg-warning text-dark pos-pill mb-1">Volante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Al-Ittihad</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">8</div><img src="img/jogadores/ederson_silva.jpg" alt="Ederson (Atalanta)"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Ederson</h6><span class="badge bg-warning text-dark pos-pill mb-1">Meia</span><p class="text-muted mb-0" style="font-size:0.78rem;">Atalanta</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATACANTES -->
+    <h5 class="fw-bold mb-3 ps-1"><span class="badge bg-danger me-2">ATK</span>Atacantes</h5>
+    <div class="row g-3 mb-5">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">7</div><img src="img/jogadores/vini.jpg" alt="Vinicius Jr."></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Vinicius Jr.</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Real Madrid</strong></p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">11</div><img src="img/jogadores/raphinha.jpg" alt="Raphinha"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Raphinha</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Barcelona</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">9</div><img src="img/jogadores/matheus.jpg" alt="Matheus Cunha"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Matheus Cunha</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Man. United</strong></p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">10</div><img src="img/jogadores/neymar.jpg" alt="Neymar Jr."></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Neymar Jr.</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Santos</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">19</div><img src="img/jogadores/martinelli.jpg" alt="Gabriel Martinelli"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">G. Martinelli</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Arsenal</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">22</div><img src="img/jogadores/endrick.jpg" alt="Endrick"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Endrick</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Lyon</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">20</div><img src="img/jogadores/igor.jpg" alt="Igor Thiago"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Igor Thiago</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Brentford</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">21</div><img src="img/jogadores/luiz.jpg" alt="Luiz Henrique"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Luiz Henrique</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Zenit</p></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card jogador-card h-100 border-0 shadow-sm">
+          <div class="foto-wrap"><div class="num-badge">26</div><img src="img/jogadores/rayan.jpg" alt="Rayan"></div>
+          <div class="card-body p-3"><h6 class="fw-bold mb-1">Rayan</h6><span class="badge bg-danger pos-pill mb-1">Atacante</span><p class="text-muted mb-0" style="font-size:0.78rem;">Bournemouth</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== LENDAS ===================== -->
     <h2 class="section-title text-center mb-4">Jogadores Lendários</h2>
-    <div class="row g-4">
+    <div class="row g-4 mb-2">
 
-      <div class="col-lg-6">
-        <div class="lenda-card p-4 rounded-4 shadow h-100">
-          <div class="d-flex align-items-start gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Pele_con_Brasil_%28cropped%29.jpg/400px-Pele_con_Brasil_%28cropped%29.jpg" 
-                 alt="Pelé" 
-                 class="lenda-foto-circle flex-shrink-0 rounded-3 shadow" 
-                 style="width:80px; height:80px; object-fit:cover;"/>
-            <div>
-              <h5 class="fw-bold mb-1">Pelé <span class="badge bg-warning text-dark">#10</span></h5>
-              <p class="text-muted small mb-2">Edson Arantes do Nascimento</p>
-              <p class="mb-0"><strong>Histórico:</strong> O Rei do Futebol. Único jogador tricampeão mundial (1958, 1962, 1970). 92 jogos e 77 gols pela Seleção. Considerado o maior jogador de todos os tempos.</p>
+      <div class="col-md-6 col-lg-3">
+        <div class="lenda-card-new h-100">
+          <div class="foto-lenda"><img src="img/Pele.jpg" alt="Pelé"></div>
+          <div class="p-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="fw-bold mb-0">Pelé</h5>
+              <span class="badge bg-warning text-dark">#10</span>
             </div>
+            <p class="text-muted small mb-1">Edson Arantes do Nascimento</p>
+            <p class="text-muted small mb-0">O Rei do Futebol. Único tricampeão mundial (1958, 1962, 1970). <strong>77 gols em 92 jogos</strong> pela Seleção. Considerado o maior de todos os tempos.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <div class="lenda-card p-4 rounded-4 shadow h-100">
-          <div class="d-flex align-items-start gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ronaldo_Brazil_2000.jpg/400px-Ronaldo_Brazil_2000.jpg" 
-                 alt="Ronaldo Fenômeno" 
-                 class="lenda-foto-circle flex-shrink-0 rounded-3 shadow" 
-                 style="width:80px; height:80px; object-fit:cover;"/>
-            <div>
-              <h5 class="fw-bold mb-1">Ronaldo <span class="badge bg-primary">#9</span></h5>
-              <p class="text-muted small mb-2">Ronaldo Luís Nazário de Lima</p>
-              <p class="mb-0"><strong>Histórico:</strong> O Fenômeno. Bicampeão mundial (1994, 2002). Maior artilheiro brasileiro em Copas com 15 gols. 98 jogos e 62 gols pela Seleção.</p>
+      <div class="col-md-6 col-lg-3">
+        <div class="lenda-card-new h-100">
+          <div class="foto-lenda"><img src="img/ronaldo.jpg" alt="Ronaldo Fenômeno"></div>
+          <div class="p-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="fw-bold mb-0">Ronaldo</h5>
+              <span class="badge bg-primary">#9</span>
             </div>
+            <p class="text-muted small mb-1">Ronaldo Luís Nazário de Lima</p>
+            <p class="text-muted small mb-0">O Fenômeno. Bicampeão mundial (1994 e 2002). Artilheiro brasileiro em Copas com <strong>15 gols</strong>. 62 gols em 98 jogos pela Seleção.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <div class="lenda-card p-4 rounded-4 shadow h-100">
-          <div class="d-flex align-items-start gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ronaldinho_2009.jpg/400px-Ronaldinho_2009.jpg" 
-                 alt="Ronaldinho Gaúcho" 
-                 class="lenda-foto-circle flex-shrink-0 rounded-3 shadow" 
-                 style="width:80px; height:80px; object-fit:cover;"/>
-            <div>
-              <h5 class="fw-bold mb-1">Ronaldinho Gaúcho <span class="badge bg-danger">#10</span></h5>
-              <p class="text-muted small mb-2">Ronaldo de Assis Moreira</p>
-              <p class="mb-0"><strong>Histórico:</strong> Campeão mundial em 2002. Melhor jogador do mundo pela FIFA em 2004 e 2005. 97 jogos e 33 gols. O mais habilidoso da história.</p>
+      <div class="col-md-6 col-lg-3">
+        <div class="lenda-card-new h-100">
+          <div class="foto-lenda"><img src="img/ronaldinho.jpg" alt="Ronaldinho Gaúcho"></div>
+          <div class="p-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="fw-bold mb-0">Ronaldinho</h5>
+              <span class="badge bg-danger">#10</span>
             </div>
+            <p class="text-muted small mb-1">Ronaldo de Assis Moreira</p>
+            <p class="text-muted small mb-0">Campeão mundial em 2002. Melhor do mundo pela FIFA em <strong>2004 e 2005</strong>. 33 gols em 97 jogos pela Seleção. O mais habilidoso da história.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <div class="lenda-card p-4 rounded-4 shadow h-100">
-          <div class="d-flex align-items-start gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Romario_de_Souza_Faria.jpg/400px-Romario_de_Souza_Faria.jpg" 
-                 alt="Romário" 
-                 class="lenda-foto-circle flex-shrink-0 rounded-3 shadow" 
-                 style="width:80px; height:80px; object-fit:cover;"/>
-            <div>
-              <h5 class="fw-bold mb-1">Romário <span class="badge bg-success">#11</span></h5>
-              <p class="text-muted small mb-2">Romário de Souza Faria</p>
-              <p class="mb-0"><strong>Histórico:</strong> Campeão mundial e melhor jogador da Copa de 1994. 70 jogos e 55 gols pela Seleção. Mais de 1.000 gols na carreira.</p>
+      <div class="col-md-6 col-lg-3">
+        <div class="lenda-card-new h-100">
+          <div class="foto-lenda" style="height:220px;overflow:hidden;"><img src="img/jogadores/neymar.jpg" alt="Neymar Jr." style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div class="p-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="fw-bold mb-0">Neymar Jr.</h5>
+              <span class="badge bg-success">#10</span>
             </div>
+            <p class="text-muted small mb-1">Neymar da Silva Santos Júnior</p>
+            <p class="text-muted small mb-0">Maior artilheiro da história da Seleção com <strong>79 gols</strong> em 128 jogos. Campeão olímpico em 2016. Ativo na Copa 2026 pelo Santos.</p>
           </div>
         </div>
       </div>
 
     </div>
+
   </div>
 
   <footer class="footer-bg text-white py-4">
     <div class="container text-center">
       <p class="mb-1 fw-bold">© 2026 Brasil na Copa do Mundo</p>
-      <p class="mb-0 text-white-50 small">Site educacional desenvolvido com Bootstrap 5 · HTML · CSS · JS</p>
+      <p class="mb-1 small">Atividade educacional desenvolvida por <strong>Murilo Bastos Palma</strong></p>
     </div>
   </footer>
 
@@ -155,3 +341,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
